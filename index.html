@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title>sprintf</title>
+<script type="text/javascript" src="sprintf.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+
+<h1>JavaScript sprintf</h1>
+
+<p>This is a simple JavaScript implementation of the sprintf
+function. This version also gives the user the option of passing the
+arguments as an object with named parameters rather than as positional
+parameters.</p>
+
+<p>Parameters can be passed as either an object, array, or as
+individual arguments. If passed as an object, named parameters are
+supported.</p>
+
+<p>Conversion specifiers look similar to
+the <a href="http://php.net/manual/en/function.sprintf.php">PHP
+implementation</a>, and consist of these parts following a percent
+sign (%), in order:</p>
+
+<ol>
+  <li>Position/name specifier, matching one of the following:
+    <ul>
+      <li>{<em>[number]</em>} - use parameter number <em>[number]</em>
+        (zero-indexed).</li>
+      <li>{<em>[name]</em>} - use the parameter of
+        name <em>[name]</em> in the passed object. This only works if
+        the parameters are passed as named parameters in an
+        object.</li>
+      <li><em>[number]</em>$ - use parameter number <em>[number]</em>
+        (one-indexed). This is compatible with the "argument swapping"
+        behavior of the PHP implementation.</li>
+      <li>(empty) - use the next parameter as the argument. Equivalent
+        to {<em>n</em>}, where <em>n</em> is the number of empty
+        conversion specifiers preceding this one in the format
+        string.</li>
+    </ul>
+  </li>
+  <li>Sign specifier (+): Force + sign on positive numbers.</li>
+  <li>Padding specifier (<em>(space)</em>, 0, or
+  '<em>[character]</em>): Use spaces, zeroes or the character
+  following the single quote as padding. Default is spaces.</li>
+  <li>Alignment specifier (-): left-justify values instead of
+  right-justifying them.</li>
+  <li>Width specifier (<em>[digits]</em>): The minimum number of
+  characters this conversion should result in. In float conversions,
+  the number before the decimal point.</li>
+  <li>Precision specifier (.<em>[digits]</em>): The maximum number of
+  characters in a string, or the number of characters after the
+  decimal point in a number.</li>
+  <li>Type specifier: 
+    <ul>
+      <li><em>%</em> - insert a percent character</li>
+      <li><em>b</em> - display as a binary integer</li>
+      <li><em>c</em> - display as the character represented by the
+      number</li>
+      <li><em>d</em> - display as a decimal integer</li>
+      <li><em>e</em> - display the argument as a floating-point number
+      in scientific notation</li>
+      <li><em>E</em> - uppercase version of <em>%e</em></li>
+      <li><em>f</em> - display as a floating point number</li>
+      <li><em>F</em> - uppercase version of <em>%f</em></li>
+      <li><em>o</em> - display as an octal number</li>
+      <li><em>s</em> - display the argument as a string</li>
+      <li><em>x</em> - display as a hexidecimal number</li>
+      <li><em>X</em> - uppercase version of <em>%x</em></li>
+    </ul>
+  </li>
+</ol>
+
+<p><a href="sprintf.js">Download</a></p>
+
+</body>
+
+</html>
