@@ -9,11 +9,11 @@ named parameters are supported.
 
 You can use this in an object-oriented style by doing something like:
 
-    "%s is %d years old".format('Tom', 28); // Tom is 28 years old
+    "%s is %d years old".format("Tom", 28); // Tom is 28 years old
 
 or with the String.format function
 
-    String.format("%s is %s at JavaScript", "Greg", "pro"); // Greg is pro at JavaScript
+    String.format("%s is %s at %s", "Greg", "pro", "JavaScript"); // Greg is pro at JavaScript
 
 or with the sprintf function
 
@@ -22,7 +22,7 @@ or with the sprintf function
 All of these versions also allow you to pass an object and use named properties:
 
     "%{name}s has $%{balance}.2f in his bank account".format({
-        name: 'Greg',
+        name: "Greg",
         balance: 77344.2
     }); // Greg has $77344.20 in his bank account
 
@@ -33,11 +33,11 @@ following, in order.
 
 1. Position/name specifier, matching one of the following:
 
-    * {[number]} - use parameter number [number] (zero-indexed).
+    * {[number]} - use parameter number [number], (zero-indexed).
     * {[name]} - use the parameter of name [name] in the passed object.  This
         only works if the parameters are passed as named parameters in an
         object.
-    * [number]$ - use parameter number [number] (one-indexed). This is
+    * [number]$ - use parameter number [number], (one-indexed). This is
         compatible with the "argument swapping" behavior of the PHP
         implementation.
     * (empty) - use the next parameter as the argument. Equivalent to {n},
